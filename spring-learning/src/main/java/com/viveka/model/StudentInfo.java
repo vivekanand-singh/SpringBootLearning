@@ -12,7 +12,7 @@ import lombok.Setter;
 public class StudentInfo {
   @Id
   @GeneratedValue
-  int rollNumber;
-  int name;
-  int branch;
+  Long rollNumber;
+  String name;
+  String branch;
 }
