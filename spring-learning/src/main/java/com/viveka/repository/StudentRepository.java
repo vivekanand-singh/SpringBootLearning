@@ -6,5 +6,5 @@ import com.viveka.model.StudentInfo;
 
 @Component
 public interface StudentRepository extends JpaRepository<StudentInfo, Long> {
-
+  StudentInfo findByName(String name);
 }
