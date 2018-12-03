@@ -1,2 +1,2 @@
 # SpringBootLearning
-Spring boot, hibernate, jpa,mysql, mongodb etc
+Spring boot, hibernate, jpa use with h2 database.
