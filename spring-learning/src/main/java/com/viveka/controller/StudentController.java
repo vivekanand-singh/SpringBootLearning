@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,5 +38,12 @@ public class StudentController {
   Optional<StudentInfo> insert(@RequestBody StudentInfo std) {
     studentRepo.save(std);
     return studentRepo.findById(std.getRollNumber());
+  }
+
+  @PutMapping(value = "/update/{roll}")
+  Optional<StudentInfo> update(@RequestBody StudentInfo std, @PathVariable Long roll) {
+    std.setRollNumber(roll);
+    studentRepo.save(std);
+    return studentRepo.findById(roll);
   }
 }
